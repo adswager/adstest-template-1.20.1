@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "adstest:block/sound_block"
+    }
+  }
+}

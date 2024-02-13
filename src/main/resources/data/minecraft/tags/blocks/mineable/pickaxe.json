@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "adstest:ruby_block",
+    "adstest:raw_ruby_block",
+    "adstest:ruby_ore",
+    "adstest:deepslate_ruby_ore",
+    "adstest:nether_ruby_ore",
+    "adstest:end_stone_ruby_ore"
+  ]
+}
