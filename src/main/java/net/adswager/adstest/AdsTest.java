@@ -18,8 +18,11 @@ public class AdsTest implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		ModItems.registerModItems();
+
 		FuelRegistry.INSTANCE.add(ModItems.COAL_CHUNK, 200);
+
 		ModItemGroups.registerItemGroups();
+
 		ModBlocks.registerModBlocks();
 	}
 }
