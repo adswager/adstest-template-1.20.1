@@ -26,10 +26,7 @@ public class ModCustomTrades {
                     new ItemStack(Items.EMERALD, 2),
                     new ItemStack(ModItems.TOMATO, 8),
                     6, 5, 0.05f ));
-            factories.add((entity, random) -> new TradeOffer(
-                    new ItemStack(Items.GOLD_INGOT, 1),
-                    new ItemStack(ModItems.CORN_SEEDS, 5),
-                    3, 5, 0.085f ));
+
                 });
     }
 }
