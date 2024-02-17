@@ -3,6 +3,7 @@ package net.adswager.adstest;
 import net.adswager.adstest.block.ModBlocks;
 import net.adswager.adstest.item.ModItemGroups;
 import net.adswager.adstest.item.ModItems;
+import net.adswager.adstest.util.ModCustomTrades;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -18,6 +19,7 @@ public class AdsTest implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		ModItems.registerModItems();
+		ModCustomTrades.registerCustomTrades();
 
 		FuelRegistry.INSTANCE.add(ModItems.COAL_CHUNK, 200);
 

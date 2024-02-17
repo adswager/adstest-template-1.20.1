@@ -1,13 +1,18 @@
 {
   "item.adstest.ruby": "Ruby",
   "item.adstest.raw_ruby": "Raw Ruby",
+  "item.adstest.ruby_sword": "Ruby Sword",
+  "item.adstest.ruby_pickaxe": "Ruby Pickaxe",
+  "item.adstest.ruby_axe": "Ruby Axe",
+  "item.adstest.ruby_shovel": "Ruby Shovel",
+  "item.adstest.ruby_hoe": "Ruby Hoe",
   "item.adstest.metal_detector": "Metal Detector",
 
   "block.adstest.ruby_block": "Block of Ruby",
   "block.adstest.raw_ruby_block": "Block of Raw Ruby",
 
   "itemgroup.ruby": "Ruby Group",
-
+  "item.adstest.ruby_staff": "Ruby Staff",
   "block.adstest.sound_block": "Sound Block",
   "block.adstest.ruby_ore": "Ruby Ore",
   "block.adstest.deepslate_ruby_ore": "Deepslate Ruby Ore",
@@ -16,6 +21,14 @@
   "item.adstest.tomato": "Tomato",
   "item.adstest.coal_chunk": "Coal Chunk",
   "tooltip.adstest.metal_detector.tooltip": "Finds valueables underground",
+
+  "item.adstest.tomato_seeds": "Tomato Seeds",
+  "item.adstest.corn_seeds": "Corn Seeds",
+  "item.adstest.corn": "Corn",
+  "item.adstest.ruby_helmet": "Ruby Helmet",
+  "item.adstest.ruby_chestplate": "Ruby Chestplate",
+  "item.adstest.ruby_leggings": "Ruby Leggings",
+  "item.adstest.ruby_boots": "Ruby Boots",
 
   "block.adstest.ruby_stairs": "Ruby Stairs",
   "block.adstest.ruby_slab": "Ruby Slab",

@@ -1,7 +1,9 @@
 package net.adswager.adstest.block;
 
 import net.adswager.adstest.AdsTest;
+import net.adswager.adstest.block.custom.CornCropBlock;
 import net.adswager.adstest.block.custom.SoundBlock;
+import net.adswager.adstest.block.custom.TomatoCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -61,6 +63,13 @@ public class ModBlocks {
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK), BlockSetType.IRON));
     public static final Block RUBY_TRAPDOOR = registerBlock("ruby_trapdoor",
             new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK), BlockSetType.IRON));
+
+    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, "tomato_crop"),
+    new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+ public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, "corn_crop"),
+    new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
     private static Block registerBlock(String name, Block block){
         registerBlockIem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, name), block);
