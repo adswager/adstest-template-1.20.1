@@ -1,9 +1,7 @@
 package net.adswager.adstest.block;
 
 import net.adswager.adstest.AdsTest;
-import net.adswager.adstest.block.custom.CornCropBlock;
-import net.adswager.adstest.block.custom.SoundBlock;
-import net.adswager.adstest.block.custom.TomatoCropBlock;
+import net.adswager.adstest.block.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -69,6 +67,11 @@ public class ModBlocks {
 
  public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, "corn_crop"),
     new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block COW_CROP = Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, "cow_crop"),
+            new CowCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+ public static final Block SHEEP_CROP = Registry.register(Registries.BLOCK, new Identifier(AdsTest.MOD_ID, "sheep_crop"),
+            new SheepCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     private static Block registerBlock(String name, Block block){
         registerBlockIem(name, block);

@@ -2,6 +2,7 @@ package net.adswager.adstest.datagen;
 
 import net.adswager.adstest.block.ModBlocks;
 import net.adswager.adstest.block.custom.CornCropBlock;
+import net.adswager.adstest.block.custom.CowCropBlock;
 import net.adswager.adstest.block.custom.TomatoCropBlock;
 import net.adswager.adstest.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -11,9 +12,12 @@ import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.item.MinecartItem;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.AnyOfLootCondition;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
@@ -62,7 +66,29 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                                 .exactMatch(CornCropBlock.AGE, 8)));
 
         addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
+
+        BlockStatePropertyLootCondition.Builder builder3 = BlockStatePropertyLootCondition.builder(ModBlocks.COW_CROP).properties(StatePredicate.Builder.create()
+                .exactMatch(CowCropBlock.AGE, 5));
+        addDrop(ModBlocks.COW_CROP, cropDropsX(ModBlocks.COW_CROP, ModItems.COW_SEEDS, Items.LEATHER, Items.BEEF, builder3));
+
+ BlockStatePropertyLootCondition.Builder builder4 = BlockStatePropertyLootCondition.builder(ModBlocks.SHEEP_CROP).properties(StatePredicate.Builder.create()
+                .exactMatch(CowCropBlock.AGE, 5));
+        addDrop(ModBlocks.SHEEP_CROP, cropDropsX(ModBlocks.SHEEP_CROP, ModItems.SHEEP_SEEDS, Items.WHITE_WOOL, Items.MUTTON, builder4));
+
+
     }
+
+    private LootTable.Builder cropDropsX(Block crop, Item product,  Item product2, Item seeds, LootCondition.Builder condition) {
+        return this.applyExplosionDecay(crop, LootTable.builder().pool(LootPool.builder()
+                .with(((LeafEntry.Builder)ItemEntry.builder(product).conditionally(condition))
+                        .alternatively(ItemEntry.builder(seeds)))).pool(LootPool.builder().conditionally(condition)
+                .with(((LeafEntry.Builder)ItemEntry.builder(product2).conditionally(condition))
+                .alternatively(ItemEntry.builder(seeds)))).pool(LootPool.builder().conditionally(condition) //line2
+                .with((LootPoolEntry.Builder<?>)((Object)ItemEntry.builder(seeds)
+                        .apply(ApplyBonusLootFunction.binomialWithBonusCount(Enchantments.FORTUNE, 0.5714286f, 3))))));
+        // If u want to add more just copy .with... ...line2 and change (productX) and in LootTable.builder in Item product just add next (eg. Item product3)
+    }
+
     public LootTable.Builder copperlikeOreDrops(Block drop, Item item) {
         return BlockLootTableGenerator.dropsWithSilkTouch(drop,
                 (LootPoolEntry.Builder)this.applyExplosionDecay(drop,

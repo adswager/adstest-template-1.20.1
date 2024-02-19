@@ -47,10 +47,17 @@ public static final Item RUBY_BOOTS = registerItem("ruby_boots",
 
 public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
         new AliasedBlockItem(ModBlocks.TOMATO_CROP, new FabricItemSettings()));
+
 public static final Item CORN_SEEDS = registerItem("corn_seeds",
         new AliasedBlockItem(ModBlocks.CORN_CROP, new FabricItemSettings()));
+
 public static final Item CORN = registerItem("corn",
         new Item( new FabricItemSettings().food(ModFoodComponents.CORN)));
+
+public static final Item COW_SEEDS = registerItem("cow_seeds",
+        new AliasedBlockItem(ModBlocks.COW_CROP, new FabricItemSettings()));
+public static final Item SHEEP_SEEDS = registerItem("sheep_seeds",
+        new AliasedBlockItem(ModBlocks.SHEEP_CROP, new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries){
         entries.add(RUBY);

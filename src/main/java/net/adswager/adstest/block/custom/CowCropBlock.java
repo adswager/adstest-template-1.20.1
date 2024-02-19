@@ -9,17 +9,15 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 
-public class TomatoCropBlock extends CropBlock {
+public class CowCropBlock extends CropBlock {
     public static final int MAX_AGE = 5;
     public static final IntProperty AGE = Properties.AGE_5;
-    public TomatoCropBlock(Settings settings) {
+    public CowCropBlock(Settings settings) {
         super(settings);
     }
 
     @Override
-    protected ItemConvertible getSeedsItem() {
-        return ModItems.TOMATO_SEEDS;
-    }
+    protected ItemConvertible getSeedsItem() {return ModItems.COW_SEEDS;}
 
 
     @Override
@@ -37,4 +35,3 @@ public class TomatoCropBlock extends CropBlock {
         builder.add(AGE);
     }
 }
-
